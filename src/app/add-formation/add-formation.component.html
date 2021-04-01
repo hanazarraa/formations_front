@@ -1,0 +1,212 @@
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Programme Hancho</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-sm-12">
+                            <!-- Nav tabs -->
+                             
+                            <ul class="nav nav-pills ">
+                              <li>
+                                <a class="active" id="inscription-tab" data-toggle="tab" href="#inscription" >Inscription</a>
+                              </li>
+                              <li>
+                                <a  id="presentation-tab" data-toggle="tab" href="#presentation" >Présentation</a>
+                              </li>
+                              <li>
+                                <a  id="cmpv-tab" data-toggle="tab" href="#cmpv" >CMPV</a>
+                              </li>
+                              <li >
+                                <a  id="gestion-tab" data-toggle="tab" href="#settings">Gestion</a>
+                              </li>
+                              <li >
+                                <a  id="ordre-tab" data-toggle="tab" href="#settings">Ordre</a>
+                              </li>
+                              <li >
+                                <a  id="evaluation-tab" data-toggle="tab" href="#settings">Evaluation</a>
+                              </li>
+                              <li >
+                                <a  id="pieces-tab" data-toggle="tab" href="#settings">Pièces Jointes</a>
+                              </li>
+                              </ul>
+                              
+                              <!-- Tab panes -->
+                              <div class="tab-content clearfix">
+                              <div class="tab-pane active" id="inscription">
+                                <div class="row">
+                                  <div class="col-sm-12">
+                                    <div class="jumbotron bg-light">
+                                        <form   class="form-horizontal">
+                                          <div class="row form-group">
+                                             <div class="col col-md-9">
+                                                <div class="form-check-inline form-check">
+                                                    
+                                                        
+                                                  <input type="radio" id="inline-radio1" name="inline-radios" value="option1" class="form-check-input" style="margin-right: 20px;">
+                                                  <label for="inline-radio1" class="form-check-label ">  Je m'inscris
+                                                </label>
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="col col-md-3">
+                                              <label   class=" form-control-label">Statut : En Attente</label>
+                                            </div>
+                                        </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label   class=" form-control-label">Date Limite</label></div>
+                                                    <div class="input-group col col-md-4">
+                                                      <input class="form-control" placeholder="yyyy-mm-dd"
+                                                             name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                                                      <div class="input-group-append">
+                                                        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                                                      </div>
+                                                    </div>
+                                            </div>
+                                         
+                                            <div class="row form-group">
+                                              <div class="col col-md-3">
+                                                  <label   class=" form-control-label">Paiement</label></div>
+                                                  
+                                          </div>
+                                             
+                                        </form>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="tab-pane" id="presentation">
+                                <div class="row">
+                                  <div class="col-sm-12">
+                                    <div class="jumbotron bg-light">
+                                       <form   class="form-horizontal">
+                                        <div class="row form-group">
+                                          <div class="col col-md-3">
+                                              <label   class=" form-control-label">Titre</label></div>
+                                              <div class="input-group col col-md-4">
+                                                <input type="titre" id="titre" name="titre"  class="form-control"> 
+                                              </div>
+                                          </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label   class=" form-control-label">Date début</label>
+                                                </div>
+                                               
+                                              <div class="input-group col col-md-4">
+                                                <input class="form-control" placeholder="yyyy-mm-dd"
+                                                       name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                                                <div class="input-group-append">
+                                                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                                                </div>
+                                              </div>
+                                              <div class="col col-md-2">
+                                                <label   class=" form-control-label">Date Fin</label>
+                                            </div>
+                                            <div class="input-group col col-md-3">
+                                              <input class="form-control" placeholder="yyyy-mm-dd"
+                                                     name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                                              <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                                              </div>
+                                            </div>
+                                            </div>
+                                            
+                                            <div class="row form-group">
+                                                <div class="col col-md-2" style="margin-top: 30px;margin-right: 40px;">
+                                                    <label   class=" form-control-label">Heure début</label>
+                                                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                 
+                                                    <div class="input-group timepicker col-md-4">
+                                                        <timepicker [(ngModel)]="time"></timepicker>
+                                                         
+                                                     </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                     <div class="col col-md-1" style="margin-top: 30px;">
+                                                      <label   class=" form-control-label">Heure Fin</label>
+                                                  </div>
+                                                   
+                                                      <div class="input-group timepicker col-md-3">
+                                                          <timepicker [(ngModel)]="time"></timepicker>
+                                                           
+                                                       </div>
+                                            </div>
+                                            <div class="row form-group">
+                                              <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Description</label></div>
+                                              <div class="col-12 col-md-4"><textarea name="textarea-input" id="textarea-input"  class="form-control"></textarea></div>
+                                          </div>
+                                          </form>
+                                        
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="tab-pane" id="cmpv" >
+                                <div class="row">
+                                  <div class="col-sm-12">
+                                    <div class="jumbotron bg-light">
+                                       <form   class="form-horizontal">
+                                        <div class="row form-group">
+                                          <table id="example" class="table table-striped" style="width:80%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Compétence Technique</th>
+                                                    <th>Niveau</th>
+                                                     <th>Evaluation</th>
+                                                     <th>Resultat</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                  <td> 
+                                                    <ngx-select [items]="items" [(ngModel)]="itemId"></ngx-select>
+
+                                                </td>
+                                                <td>
+                                                  <ngx-select [items]="levels" [(ngModel)]="levelId"></ngx-select>
+
+                                                </td>
+                                                <td>
+                                                  <input type="text" id="evaluation" name="evaluation"  class="form-control"> 
+
+                                                </td>
+                                                <td>
+                                                  <input type="text" id="resultat" name="resultat"  class="form-control"> 
+
+                                                </td>
+                                                <td>
+                                                  <button type="button"></button>
+
+                                                </td>
+                                                </tr>
+                                              </tbody>
+                                                </table>
+                                      
+                                  
+                                       </div>
+                                       </form>
+                                       </div>
+                                       </div>
+                                       </div>
+                              </div>
+                              <div class="tab-pane" id="settings" >
+                                <div class="row">
+                                  <div class="col-sm-12">
+                                    <div class="jumbotron bg-light">
+                                      <h1>Settings</h1>
+                                      <p>This is settings.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              </div>
+                              </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>            

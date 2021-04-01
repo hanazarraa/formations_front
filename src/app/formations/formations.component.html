@@ -1,0 +1,126 @@
+
+ 
+ 
+<div class="content">
+
+    <div class="animated fadeIn">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Programme</strong>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                       <!----  <ul class="nav nav-pills" style="float: right;margin-top: 0px;">
+                            <li>
+                              <a class="active"  href="/formations/list">  Liste</a>
+                            </li>
+                            <li>
+                                <a   href="/formations/agenda" >Agenda</a>
+                              </li>                        
+                               </ul> -->
+                               <ul class="nav nav-tabs card-header-tabs pull-right"  id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active btn-light" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="true">Liste</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link btn-light" id="agenda-tab" data-toggle="tab" href="#agenda" role="tab" aria-controls="agenda" aria-selected="false">Agenda</a>
+                                </li>
+                                
+                            </ul>
+                       
+                      </div>
+                     
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
+                     <div class="card-body"> 
+                        <button class="btn btn-light" style="width: 300px;margin-top: 20px;margin-left: 20px;" type="button" (click)="Ajouter()"  >
+                            <svg xmlns="http://www.w3.org/2000/svg
+              " width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                               <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                             </svg>&nbsp;&nbsp;<b>Ajouter un Programme  </b>&nbsp;&nbsp; 
+                         </button>
+                                    <ul id="treeview">
+                                        <li  data-expanded="true" *ngFor="let formation of formations">{{formation.titre}}
+                                            <ul>
+                                                <li  data-expanded="true" *ngFor="let sousformation of formation.sousProg" > <td> <b> <a [routerLink]="['/formations',sousformation.id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" > {{ sousformation.titre}}</a></b> </td>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                     
+                                                   <!---- <a [routerLink]="['/formations',formation.sousProg.id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >-->
+                                                   <td>
+                                                    <div class="dropdown" style="display: inline;position: relative;">
+   
+                                                    <button class="btn btn-light dropdown"  style=" margin-top: 20px;margin-left: 20px;background-color: white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  >
+                                                        <svg xmlns="http://www.w3.org/2000/svg"  style="width: 10px;" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                                          </svg> 
+                                                     </button>
+                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="position: absolute;">
+                                                        <a class="dropdown-item" [routerLink]="['/formations',sousformation.id,'inscriptions']"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Liste des inscriptions</a>
+                                                         </div>
+                                                      </div>
+                                                    </td>
+
+                                                       
+                                                 
+                                                  
+                                                    <ul>
+                                                        <li data-expanded="true" *ngFor="let course of sousformation.cours" >{{course.titre}}</li>
+                                                    </ul>
+                                                </li>
+                                                <!--<li data-expanded="true" *ngFor="let sousformation of formation.sousProg"><a [routerLink]="['/formations',formation.id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" > <b> {{ sousformation.titre}}</b></a>
+                                                  <ul>
+                                                      <li data-expanded="true" *ngFor="let course of formation.sousProg.cours"><a [routerLink]="['/formations',formation.id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" > <b> {{ course.titre}}</b></a>
+                                                    </li>
+                                                      
+                                                  </ul>
+                                                </li>-->
+                                                
+                                            </ul>
+                                        </li>
+                                     
+                                         
+                                    </ul>
+                                 
+                             
+                        <!--<div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+                                <button class="btn btn-light" style="width: 300px;margin-top: 20px;margin-left: 20px;" type="button" (click)="Ajouter()"  >
+                                    <svg xmlns="http://www.w3.org/2000/svg
+                      " width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                       <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                       <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                     </svg>&nbsp;&nbsp;<b>Ajouter une Formation  </b>&nbsp;&nbsp; 
+                                 </button>
+                                 <br><br><br>
+                                    
+                            <ag-grid-angular
+                            #agGrid
+    
+                            style="width: 1000px; height:200px;background-color: aliceblue;"
+                            class="ag-theme-alpine"
+                            [rowData]="rowData"
+                            [context]="context"
+                            [frameworkComponents]="frameworkComponents"
+                            
+                            [columnDefs]="columnDefs"
+                                 rowSelection="multiple"
+                                [defaultColDef]="defaultColDef"></ag-grid-angular>
+                               
+                            </div>
+                            <div class="tab-pane fade" id="agenda" role="tabpanel" aria-labelledby="agenda-tab">
+                               <full-calendar [options]="calendarOptions"></full-calendar> 
+                                
+
+                            </div>
+                         </div>-->
+                     </div>
+                               
+                 </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+ 

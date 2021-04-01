@@ -3,14 +3,68 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { FormationsComponent } from './formations/formations.component';
+import 'ag-grid-enterprise';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { AddFormationComponent } from './add-formation/add-formation.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
+import { AgendaCoursComponent } from './agenda-cours/agenda-cours.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+ import { SchedulerModule } from 'angular-calendar-scheduler';
+ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+ import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import interactionPlugin from '@fullcalendar/interaction';
+import { NgxSelectModule } from 'ngx-select-ex';
 
+import { ListeFormationsComponent } from './liste-formations/liste-formations.component';
+import { TestComponent } from './test/test.component'; // a plugin
+import { HttpClientModule } from '@angular/common/http';
+import { DemandesFormateursComponent } from './demandes-formateurs/demandes-formateurs.component';
+import { InscriptionsComponent } from './inscriptions/inscriptions.component';
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    SidebarComponent,
+    FormationsComponent,
+    AddFormationComponent,
+    AgendaCoursComponent,
+    ListeFormationsComponent,
+    TestComponent,
+    DemandesFormateursComponent,
+    InscriptionsComponent
   ],
   imports: [
+    NgxSelectModule,
+    NgxMatSelectSearchModule,
+    HttpClientModule,
+
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BsDatepickerModule.forRoot(),
+
+    AgGridModule.withComponents([]),
+    NgbModule,
+    FormsModule,   
+   TimepickerModule.forRoot(),
+   FullCalendarModule // register FullCalendar with you app
+   
+   
+      
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

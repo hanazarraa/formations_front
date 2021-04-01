@@ -1,0 +1,96 @@
+.ag-theme-alpine {
+    
+ background-color: white;
+
+}
+.ag-theme-alpine {
+    /* use theme parameters where possible */
+    //--ag-foreground-color: deeppink;
+}
+
+/* or write CSS selectors to make customisations beyond what the parameters support */
+.ag-theme-alpine .ag-header {
+    text-style: italic;
+}
+@media screen and (max-width: 768px) {
+
+    .nav-tabs {
+        display: inline-block;
+        width: 100%;
+        padding-left: 100px;
+        padding-right: 100px;
+        text-align: center;
+    }
+
+    .nav-tabs .nav-item>.nav-link {
+        margin-bottom: 5px;
+    }
+    .focus{
+         background-color:black;
+      }
+      .a{
+          margin-right: 10px;
+      }
+    
+}
+.nav-pills {
+    border-bottom: 1px solid #ddd;
+}
+.nav-pills li a {
+    background: #fff;
+    color: #000;
+    display: block;
+    line-height: 2em;
+    padding: 7px 15px;
+    border-radius: 0;
+    font-size: 20px;
+    border: none;
+    margin: 30px 2px 0;
+}
+ul li a {
+    text-decoration: none;
+}
+.nav-pills li a.active {
+    
+}
+ul, #myUL {
+    list-style-type: none;
+  }
+  
+  #myUL {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .caret {
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+  }
+  
+  .caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+  }
+  
+  .caret-down::before {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari */ 
+    transform: rotate(90deg);  
+  }
+  
+  .nested {
+    display: none;
+  }
+  
+  .active {
+    display: block;
+  }
+  .dropdown-toggle{
+     // display: none;
+  }
+  

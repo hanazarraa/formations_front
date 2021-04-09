@@ -11,6 +11,22 @@ import interactionPlugin, { Draggable } from '@fullcalendar/interaction';
   styleUrls: ['./formations.component.scss']
 })
 export class FormationsComponent implements OnInit {
+  public treeNodes: any[] = [
+    {
+        categoryName: 'Storage', subCategories: [
+            { subCategoryName: 'Wall Shelving' },
+            { subCategoryName: 'Floor Shelving' },
+            { subCategoryName: 'Kids Storage' }
+        ]
+    },
+    {
+        categoryName: 'Lights', subCategories: [
+            { subCategoryName: 'Ceiling' },
+            { subCategoryName: 'Table' },
+            { subCategoryName: 'Floor' }
+        ]
+    }
+];
  formations:any;
 constructor(  private router:Router) {
    

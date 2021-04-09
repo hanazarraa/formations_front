@@ -4,9 +4,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Programme Hancho</strong>
+                       <strong class="card-title">Programme Hancho</strong>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body"> 
                         <div class="col-sm-12">
                             <div class="col col-md-8">
                                 <h6 class="page-header">  Titre du groupe :   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Programme IC Canada </h6>
@@ -33,24 +33,43 @@
                                             <th>Date début</th>
                                             <th>Date Fin</th>
                                             
-                                            <th>Status</th>
+                                            <th>Status</th>¨
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            
-                                            <td> Personne 1 </td>
-                                            <td>  <span class="name">20/04/2021</span> </td>
-                                            <td> <span class="product">20/05/2021</span> </td>
-                                            <td><span class="badge badge-declined">Réfusé</span></td>
-                                            
+                                        <tr *ngFor ="let inscription of inscriptions"> 
+                                            <td>  <a [routerLink]="['/formations', formationId,'inscriptions',inscription.id]"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> 
+                                                {{inscription.formateur}} </a>
+                                            </td>
+                                            <td> 
+                                                <a [routerLink]="['/formations', formationId,'inscriptions',inscription.id]"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> 
+                                                     <span class="name">{{inscription.Date_debut}}</span>
+                                                </a> 
+                                            </td>
+                                            <td> 
+                                                <a [routerLink]="['/formations', formationId,'inscriptions',inscription.id]"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> 
+                                                <span class="product">{{inscription.Date_fin}}</span>
+                                                </a>
+                                             </td>
+                                            <td>
+                                                <a [routerLink]="['/formations', formationId,'inscriptions',inscription.id]"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> 
+                                                <span class="badge badge-declined" style="background-color: blue;">{{inscription.Statut}}</span>
+                                                </a>
+                                            </td>
+                                            <td><!--<button class="btn btn-success" style="height: 10px;">Accepter</button>
+                                                <button class="btn btn-danger"> Réfuser</button>-->
+                                            </td>
+                                       
                                         </tr>
-                                        <tr>
+                                       
+                                       <!---- <tr>
                                             
                                             <td> Personne 2 </td>
                                             <td>  <span class="name">20/04/2021</span> </td>
                                             <td> <span class="product">20/05/2021</span> </td>
-                                            <td><span class="badge badge-pending">En Attente</span></td>
+                                            <td><span class="badge badge-pending">Réfusé</span></td>
+                                            <td></td>
                                             
                                         </tr>
                                         <tr>
@@ -59,15 +78,24 @@
                                             <td>  <span class="name">20/04/2021</span> </td>
                                             <td> <span class="product">20/05/2021</span> </td>
                                             <td><span class="badge badge-complete">Accepté</span></td>
+                                            <td></td>
                                             
                                         </tr>
+                                            <tr> 
+                                            <td> Personne 3 </td>
+                                            <td>  <span class="name">20/04/2021</span> </td>
+                                            <td> <span class="product">20/05/2021</span> </td>
+                                            <td><span class="badge badge-complete" style="background-color: chartreuse;">Conditionnel</span></td>
+                                            <td></td>
+                                        </tr>
+                                    -->
                                     </tbody>
                                 </table>
                             </div>
 
                             
                          </div>
-                     </div>
+                      </div>
                 </div>
             </div>
         </div>

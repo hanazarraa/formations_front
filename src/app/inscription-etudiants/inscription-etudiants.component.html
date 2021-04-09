@@ -1,0 +1,130 @@
+<div class="content">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <a routerLink=".."><i class="fa fa-arrow-left" style="color: black;"></i> </a>  &nbsp;&nbsp;<strong class="card-title">Programme Hancho</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-sm-12">
+                            <div class="col col-md-8">
+                                <h6 class="page-header">  Titre du groupe :   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Programme IC Canada </h6>
+                            </div>
+                            <div class="row">
+                            <div class="col col-md-8" style="float: left;">
+                                <h6 class="page-header">&nbsp;&nbsp;Durée :   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     30H </h6>
+                            </div>
+                            <div class="col col-md-4" style="float:right">
+                                <h6 class="page-header">Capacité    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Min :   10   &nbsp;&nbsp; Max: 20  </h6>
+                            </div>
+                            </div>
+                            <div class="row"> 
+                            <div class="col col-md-8" style="float: left;">
+                                <h6 class="page-header"> Formateur :   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Personne 1  </h6>
+                            </div>
+                            <div class="col col-md-4" style="float: right;">
+                                <h6 class="page-header"> Statut :   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     {{statutParent}}  </h6>
+
+                            </div>
+                            </div>
+                            <br>
+                            <div class="col col-md-8" style="float: left;">
+                                <h6 class="page-header">&nbsp;&nbsp;<b> Liste des demandes des employés  </b>   </h6>
+                            </div>
+
+                            <div class="table-stats order-table ov-h" style="float: left;">
+                                <table class="table ">
+                                    <thead>
+                                        <tr>
+                                             
+                                            <th>Employé</th>
+                                            <th>Date Demande</th>
+                                            <th>Statut Demande</th>
+                                            
+                                            <th>Actions</th>¨
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor ="let inscription of inscriptions"> 
+                                            <td>   
+                                                {{inscription.Employe}} 
+                                            </td>
+                                            <td> 
+                                                      <span class="name">{{inscription.Date_demande}}</span>
+                                                 
+                                            </td>
+                                            <td> 
+                                                 <span class="product">{{inscription.Statut}}</span>
+                                                 
+                                             </td>
+                                             
+                                            <td *ngIf="enattente(inscription.Statut)" >
+                                                <button type="button" class="btn btn-success btn-sm"  data-toggle="modal" data-target="#acceptModal">Accepter</button>
+                                               <br><br> <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#declineModal">Réfuser</button>
+
+                                            </td>
+                                            <td *ngIf="!enattente(inscription.Statut)" >
+                                                <button type="button" class="btn btn-success btn-sm" disabled="disabled">Accepter</button>
+                                               <br><br> <button type="button" class="btn btn-danger btn-sm" disabled="disabled" >Réfuser</button>
+
+                                            </td>
+                                            <div class="modal fade" id="acceptModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="staticModalLabel">Confirmer</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" #closebutton>
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>
+                                                             Etes Vous sur d'accepter cette Demande 
+                                                           </p>
+                                                       </div>
+                                                       <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal"  >Annuler</button>
+                                                        <button type="button" class="btn btn-success" (click)="Accepter(inscription)" >Confirmer</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="declineModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-sm" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="staticModalLabel">Confirmer</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" #closebtn>
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p>
+                                                         Etes Vous sur de Réfuser cette Demande 
+                                                       </p>
+                                                      
+                                                   </div>
+                                                   <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"  >Annuler</button>
+                                                    <button type="button" class="btn btn-danger" (click)="Refuser(inscription)" >Confirmer</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        </tr>
+                                       
+                                      
+                                    </tbody>
+                                </table>
+                            </div> 
+
+                            
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

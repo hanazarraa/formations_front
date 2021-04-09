@@ -23,12 +23,21 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction';
 import { NgxSelectModule } from 'ngx-select-ex';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { ListeFormationsComponent } from './liste-formations/liste-formations.component';
 import { TestComponent } from './test/test.component'; // a plugin
 import { HttpClientModule } from '@angular/common/http';
 import { DemandesFormateursComponent } from './demandes-formateurs/demandes-formateurs.component';
 import { InscriptionsComponent } from './inscriptions/inscriptions.component';
+import { InscriptionEtudiantsComponent } from './inscription-etudiants/inscription-etudiants.component';
+import { ConsulterFormationComponent } from './consulter-formation/consulter-formation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GridViewComponent } from './grid-view/grid-view.component';
+import { ToastrModule } from 'ngx-toastr';
+import { TreeViewModule } from '@progress/kendo-angular-treeview';
+
+
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   interactionPlugin
@@ -44,13 +53,17 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ListeFormationsComponent,
     TestComponent,
     DemandesFormateursComponent,
-    InscriptionsComponent
+    InscriptionsComponent,
+    InscriptionEtudiantsComponent,
+    ConsulterFormationComponent,
+    GridViewComponent
   ],
   imports: [
     NgxSelectModule,
+    
     NgxMatSelectSearchModule,
     HttpClientModule,
-
+    MatTabsModule,
     BrowserModule,
     AppRoutingModule,
     BsDatepickerModule.forRoot(),
@@ -59,8 +72,10 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     NgbModule,
     FormsModule,   
    TimepickerModule.forRoot(),
-   FullCalendarModule // register FullCalendar with you app
-   
+   FullCalendarModule,
+   BrowserAnimationsModule ,// register FullCalendar with you app
+   ToastrModule.forRoot(), TreeViewModule,
+
    
       
 

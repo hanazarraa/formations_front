@@ -53,7 +53,7 @@ ul li a {
 .nav-pills li a.active {
     
 }
-ul, #myUL {
+/*ul, #myUL {
     list-style-type: none;
   }
   
@@ -64,9 +64,9 @@ ul, #myUL {
   
   .caret {
     cursor: pointer;
-    -webkit-user-select: none; /* Safari 3.1+ */
-    -moz-user-select: none; /* Firefox 2+ */
-    -ms-user-select: none; /* IE 10+ */
+    -webkit-user-select: none;  
+    -moz-user-select: none;  
+    -ms-user-select: none;  
     user-select: none;
   }
   
@@ -78,8 +78,8 @@ ul, #myUL {
   }
   
   .caret-down::before {
-    -ms-transform: rotate(90deg); /* IE 9 */
-    -webkit-transform: rotate(90deg); /* Safari */ 
+    -ms-transform: rotate(90deg); 
+    -webkit-transform: rotate(90deg);   
     transform: rotate(90deg);  
   }
   
@@ -88,9 +88,12 @@ ul, #myUL {
   }
   
   .active {
-    display: block;
+    display: none;
   }
   .dropdown-toggle{
-     // display: none;
+     display: none;
   }
-  
+  */
+  .active {
+    color: #000;
+  }
